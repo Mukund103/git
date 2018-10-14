@@ -1,0 +1,44 @@
+[root@workstation ~]# yum install git
+
+[root@workstation ~]# mkdir /code
+[root@workstation ~]# cd /code
+
+[root@workstation code]# git init
+
+
+[root@workstation code]# git status
+
+# git add my.py
+# git commit my.py  -m "my web is ready first changes"
+
+[root@workstation code]# git log
+
+[root@workstation code]# git reset --hard 316241675027bbb570cf907da284
+
+
+# git add .
+#  git commit .  -m "first"
+
+[root@registry ~]# yum  install  git  httpd -y
+
+[root@registry ~]# mkdir /code
+[root@registry ~]# mkdir /code/git
+[root@registry git]# git init --shared --bare  lw.git
+[root@registry code]# chown  apache -R /code/
+[root@registry cgi-bin]# cd /etc/httpd/conf.d/
+# vim git.conf
+
+[root@registry conf.d]# systemctl restart httpd
+#  firewall-cmd  --add-port=80/tcp
+At client  / dev side:
+# mkdir code1
+[root@workstation code1]# git clone http://192.168.0.110/lw.git
+[root@workstation lw]# git push origin
+[root@workstation lw]#  git config --global push.default simple
+[root@workstation lw]# git push origin
+
+
+
+
+
+
